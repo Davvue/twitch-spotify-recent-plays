@@ -12,13 +12,19 @@ for (const song of SONGS) {
   imgContainer.appendChild(coverImg);
   container.appendChild(imgContainer);
 
-  const songTitle = document.createElement("p");
+  const songTitle = document.createElement("h3");
   songTitle.innerText = song.title;
-  container.appendChild(songTitle);
+  songTitle.classList.add("song-title");
 
-  const songArtist = document.createElement("p");
+  const songArtist = document.createElement("h4");
   songArtist.innerText = song.artist;
-  container.appendChild(songArtist)
+  songArtist.classList.add("song-artist");
+  songArtist.classList.add("subtitle");
+
+  const songInfo = document.createElement("div");
+  songInfo.appendChild(songTitle);
+  songInfo.appendChild(songArtist);
+  container.appendChild(songInfo);
 
   songContainer.appendChild(container);
 }
