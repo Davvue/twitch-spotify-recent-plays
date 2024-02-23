@@ -1,9 +1,12 @@
 :root {
   --container-padding: 10px;
   --container-spacing: 20px;
+  --cover-blur: 2px;
   --cover-border-radius: 5px;
   --cover-size: 50px;
   --song-spacing: 10px;
+  --subtitle-color: #8d8d8d;
+  --text-color: #fafafa
 }
 
 *, *::after, *::before {
@@ -11,7 +14,7 @@
   margin: 0;
   scroll-behavior: smooth;
   font-family: Helvetica, Arial, sans-serif;
-  color: #fafafa;
+  color: var(--text-color);
 }
 
 img {
@@ -31,9 +34,38 @@ img {
   gap: var(--song-spacing, 10px);
 }
 
+.song-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subtitle {
+  color: var(--subtitle-color);
+  font-weight: normal;
+}
+
 .song-cover {
+  position: relative;
   border-radius: var(--cover-border-radius, 10px);
   overflow: hidden;
   height: var(--cover-size, 50px);
   width: var(--cover-size, 50px);
+}
+
+.song-cover.playing {
+  filter: blur(var(--cover-blur, 2px));
+}
+
+.song-cover.playing::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: #000000aa;
+  filter: blur();
+  z-index: 1;
 }

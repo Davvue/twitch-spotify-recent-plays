@@ -8,7 +8,7 @@ for (const song of SONGS) {
   coverImg.src = song.cover;
   const imgContainer = document.createElement("div");
   imgContainer.classList.add("song-cover");
-  imgContainer.classList.toggle("song-playing", song.playing);
+  if (song.playing) imgContainer.classList.add("playing");
   imgContainer.appendChild(coverImg);
   container.appendChild(imgContainer);
 
@@ -22,6 +22,7 @@ for (const song of SONGS) {
   songArtist.classList.add("subtitle");
 
   const songInfo = document.createElement("div");
+  songInfo.classList.add("song-info");
   songInfo.appendChild(songTitle);
   songInfo.appendChild(songArtist);
   container.appendChild(songInfo);
