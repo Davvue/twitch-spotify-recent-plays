@@ -9,6 +9,12 @@ module.exports = merge(common, {
     new HtmlWebpackPlugin({
       template: './panel.html',
     }),
+    new HtmlWebpackPlugin({
+      template: './config.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './live_config.html',
+    }),
     new CopyPlugin({
       patterns: [
         { from: 'img', to: 'img' },

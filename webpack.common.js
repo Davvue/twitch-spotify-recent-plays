@@ -2,11 +2,13 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    app: './js/client.js',
+    client: './js/client.js',
+    config: './js/config.js',
+    live_config: './js/live_config.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    filename: './js/client.js',
+    filename: './js/[name].js',
   },
 };
