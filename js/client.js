@@ -1,9 +1,11 @@
 import api from "./lib/api";
 
 const songContainer = document.querySelector(".songs")
+let twitchToken;
 
 window.Twitch.ext.onAuthorized((auth) => {
-  api.channelId = auth.channelId
+  api.channelId = auth.channelId;
+  twitchToken = auth.token;
 });
 
 async function wait(millis) {

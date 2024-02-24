@@ -2,11 +2,11 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    app: './js/app.js',
+    app: './js/client.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    filename: './js/app.js',
+    filename: './js/client.js',
   },
 };
